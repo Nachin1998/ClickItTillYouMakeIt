@@ -7,29 +7,27 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static int gold = 0;
+    public static int money = 0;
 
-    public TMP_Text goldAmmount;
-    public Player player;
-    public Enemy enemy;
+    public TMP_Text overallIncome;
     public GameObject game;
     public GameObject pauseMenu;
 
+    public int click;
+    public int clickUpgrades;
+
     void Start()
     {
-
+        click = 1;
+        clickUpgrades = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        goldAmmount.text = "Gold:" + gold;
+        overallIncome.text = "Money:" + money;
 
-        if(enemy.gameObject == null)
-        {
-            Instantiate(enemy.gameObject, game.transform);
-        }
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (pauseMenu.activeSelf)
             {
@@ -41,19 +39,13 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (enemy.isAlive)
-            {
-                StartCoroutine(enemy.TakeDamage(player.damage));
-                gold++;
-            }
-        }
-    }
+        
 
-    IEnumerator SpawnEnemy()
+        click *= clickUpgrades;
+    }
+    
+    public void Mine()
     {
-        yield return new WaitForSeconds(0.3f);
-        Instantiate(enemy, game.transform);
+        money += click;
     }
 }

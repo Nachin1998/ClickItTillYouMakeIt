@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class ExtraMiners : MonoBehaviour
 {
-    public int playerLevel = 1;
-    public float damage = 1.0f;
-
+    // Start is called before the first frame update
     void Start()
     {
         
