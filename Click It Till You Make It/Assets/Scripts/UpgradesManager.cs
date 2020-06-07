@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class UpgradesManager : MonoBehaviour
 {
     public GameManager gManager;
-    public Transform upgradesMenu;
-    public TMP_Text moneyPerClick;
+    public Transform upgradesMenuTransform;
 
     public List<Upgrade> upgradeButtons = new List<Upgrade>();
 
@@ -21,13 +18,11 @@ public class UpgradesManager : MonoBehaviour
     {
         /*for (int i = 0; i < upgradeButtons.Count; i++)
         {
-            Instantiate(upgradeButtons[i], upgradesMenu);
+            Instantiate(upgradeButtons[i], upgradesMenuTransform);
         }*/
     }
     void Update()
     {
-        moneyPerClick.text = "Money per click: " + gManager.click;
-
         for (int i = 0; i < upgradeButtons.Count; i++)
         {
             SetButtonActive(upgradeButtons[i], upgradeButtons[i].moneyNeededToActivate);

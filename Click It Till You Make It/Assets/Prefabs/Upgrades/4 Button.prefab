@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6441824988294373869}
   - component: {fileID: 6441824988294373870}
   m_Layer: 5
-  m_Name: 4 Button (3)
+  m_Name: 4 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6441824988294373867}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -121,12 +121,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 84a084198dd7caf4caeb383a59fa5182, type: 3}
-        m_MethodName: 
+      - m_Target: {fileID: 6441824988294373870}
+        m_MethodName: BuyUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -157,7 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d091c02bb1a99e547a50c96dbebce57d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyNeededToActivate: 250
+  upgradeLevel: 1
+  moneyNeededToActivate: 500
   price: 0
   hasBeenBought: 0
   isActive: 0
